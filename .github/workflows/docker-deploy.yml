@@ -1,0 +1,16 @@
+name: VALIDANDO DOCKER
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Baixar imagem Docker
+      run: docker pull guscarpim/docker-fiap:v1
+
+    - name: Rodando o container
+      run: docker run -d -p 3000:3000 guscarpim/docker-fiap:v1
