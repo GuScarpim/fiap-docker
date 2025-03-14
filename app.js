@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
   res.send({ message: "Api rodando!!!"})
 })
 app.get("/new", (req, res) => {
-  res.send({ message: "Roa New"})
+  res.send({ message: "Rota New atualizada V2"})
 })
 
 module.exports = app;
