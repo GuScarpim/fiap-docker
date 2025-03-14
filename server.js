@@ -1,13 +1,8 @@
-const http = require('http');
+const app = require('./app');
+const PORT = process.env.PORT || 3000;
 
-const port = 3000;
-
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-type', 'text/plain');
-  res.end('Hello, World FIAP1');
+const server = app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT} v1`)
 });
 
-server.listen(port, () => {
-  console.log(`Servidor rodando na porta http://localhost:${port}/`);
-});
+module.exports = server;
